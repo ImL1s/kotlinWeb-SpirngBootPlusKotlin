@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam
 @Controller
 class UserController {
 
-    @RequestMapping("/MyFirstPage")
-    fun greeting(@RequestParam(value = "title", required = false, defaultValue = "xiao")
-                 title: String,
-                 model: Model): String {
-        model.addAttribute("name", title)
+    private val message = "鐵人賽第七天加油!!!"
+
+    @GetMapping("/")
+    fun index(model: MutableMap<String, Any>): String {
+        model["message"] = this.message
+        model["name"] = "GG"
         return "index"
     }
 }

@@ -7,7 +7,7 @@ import java.util.Arrays.asList
 @RestController
 class HelloController {
 
-    @GetMapping(value = ["/hello", "/"])
+    @GetMapping(value = ["/hello", "/hello2"])
     fun hello(): Any {
         return "hello"
     }
